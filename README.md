@@ -6,4 +6,4 @@ Renders a 3D cube with OpenGL and Python
 <p>Created the repository</p>
 <h3>11-4-15 / 2</h3>
 <p>Spinning cube made</p>
-![alt tag](https://raw.github.com/jake32321/OpenGL_Python_Render/master/Capture.jpg)
+![alt tag](https://raw.github.com/jake32321/OpenGL_Python_Render/master/Capture.PNG)
