@@ -30,8 +30,41 @@ edges = ( #Nodes for the twelve edges of the cube to be rendered
 	(5, 7)
 	)
 
-def Cube():  #Draws the lines for the cube
-	glBegin(GL_LINES)
+surfaces = ( #Nodes for the various surfaces to be rendered
+	(0, 1, 2, 3),
+	(3, 2, 7, 6),
+	(6, 7, 5, 4),
+	(4, 5, 1, 0),
+	(1, 5, 7, 2),
+	(4, 0, 3, 6)
+	)
+
+colors = ( #Sets a list of colors
+	(1, 0, 0),
+	(0, 1, 0),
+	(0, 0, 1),
+	(0, 0, 0),
+	(1, 1, 1),
+	(0, 1, 1),
+	(1, 0, 0),
+	(0, 1, 0),
+	(0, 0, 1),
+	(0, 0, 0),
+	(1, 1, 1),
+	(0, 1, 1),
+	)
+
+def Cube(): 
+	glBegin(GL_QUADS) #Draws the surfaces on the line
+	for surface in surfaces:
+		x = 0
+		for vertex in surface:
+			x+=1
+			glColor3fv(colors[x])
+			glVertex3fv(vertices[vertex])
+	glEnd()
+
+	glBegin(GL_LINES)  #Draws lines between the nodes
 	for edge in edges:
 		for vertex in edge:
 			glVertex3fv(vertices[vertex])
