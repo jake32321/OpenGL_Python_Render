@@ -10,3 +10,5 @@ Renders a 3D cube with OpenGL and Python
 <h3>11-4-15 / 3</h3>
 <p>Added surfaces and colors</p>
 ![alt tag](https://raw.github.com/jake32321/OpenGL_Python_Render/master/Capture2.PNG)
+<h3>11-6-15</h3>
+<p>Stopped rotating the cube and allowed for the user to control the block's movement</p>
