@@ -78,7 +78,7 @@ def main():
 
 	gluPerspective(45, (display[0]/display[1]), 0.1, 50.0) #Sets FOV, aspect ratio and clipping plane
 
-	glTranslatef(0.0, 0.0, -5) #Moves about the object
+	glTranslatef(0.0, 0.0, -10) #Moves about the object
 
 	glRotatef(0, 0, 0, 0) # Rotates object
 
@@ -97,12 +97,10 @@ def main():
 				glTranslatef(0,0.1,0)
 			if event.key == pygame.K_DOWN: #Translate down
 				glTranslatef(0,-0.1,0)
-
-		if event.type == pygame.MOUSEBUTTONDOWN: #Allows panning (zooming)
-			if event.button == 4: #Four is the event for panning in
-				glTranslatef(0,0,0.1)
-			if event.button == 5: #Five is the event for panning out
+			if event.key == pygame.K_w: #Four is the event for panning in
 				glTranslatef(0,0,-0.1)
+			if event.key == pygame.K_s: #Five is the event for panning out
+				glTranslatef(0,0,0.1)
 
 		#glRotatef(1, 3, 1, 1) #Rotates the cube
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT) #What needs to be cleared
