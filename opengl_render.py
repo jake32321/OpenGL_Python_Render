@@ -88,7 +88,23 @@ def main():
 				pygam.quit()
 				quit()
 
-		glRotatef(1, 3, 1, 1) #Rotates the cube
+		if event.type == pygame.KEYDOWN: #Moves object in 3D plane
+			if event.key == pygame.K_LEFT: #Translate left
+				glTranslatef(-0.1,0,0) 
+			if event.key == pygame.K_RIGHT: #Translate right
+				glTranslatef(0.1,0,0)
+			if event.key == pygame.K_UP: #Translate up 
+				glTranslatef(0,0.1,0)
+			if event.key == pygame.K_DOWN: #Translate down
+				glTranslatef(0,-0.1,0)
+
+		if event.type == pygame.MOUSEBUTTONDOWN: #Allows panning (zooming)
+			if event.button == 4: #Four is the event for panning in
+				glTranslatef(0,0,0.1)
+			if event.button == 5: #Five is the event for panning out
+				glTranslatef(0,0,-0.1)
+
+		#glRotatef(1, 3, 1, 1) #Rotates the cube
 		glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT) #What needs to be cleared
 		Cube()
 		pygame.display.flip() 
